@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transport</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'service_provider/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'service_provider/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'service_provider/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'service_provider/css/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        
+        
+        <!-- Sidebar Start -->
+                <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="service_provider" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>RTO</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="{% static 'service_provider/img/pepole.png' %}" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0"></h6>
+                        <span style="text-transform: capitalize;">{{r_office}}</span>
+                        
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="home" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-female"></i>Register</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="Rto_Users" class="nav-item nav-link">Users</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="table" class="nav-item nav-link" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Driving Licence</a>
+                        <div class="dropdown-menu bg-transparent border-0">   
+                            <a href="Rto_DL_Application" class="nav-item nav-link">DL Applications </a>
+                            <a href="Rto_DL_Verification" class="nav-item nav-link">DL Verification  </a>
+                            <a href="Rto_Appoinment" class="nav-item nav-link">DL Appoinments </a>
+                            <a href="Rto_DL_Application" class="nav-item nav-link">DL Change Addresses </a>
+                            
+                            <a href="Rto_DL_Application" class="nav-item nav-link">DL Print </a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="Vehical_Info" class="nav-item nav-link" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Vehical Info</a>
+                        <div class="dropdown-menu bg-transparent border-0">   
+                            <a href="Vehical_Info" class="nav-item nav-link">Registration  </a>
+                            <a href="rto_show_vehicalinfo" class="nav-item nav-link">Show Details  </a>
+                        </div>
+                    </div>
+                    <a href="rto_show_vehicalinfo" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Rc Book  Print</a>
+
+                    <a href="Rto_Chart" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Chart</a>
+                    <a href="Rto_Inquiry" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Contact Us</a>                   
+                </div>
+            </nav>
+        </div>
+
+        <!-- Sidebar End -->
+
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+<!-- Form Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Vehicle Registration Form</h6>
+                <form method="POST" action="Vehical_Info">
+                    {% csrf_token %}
+ 
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="makeModel" class="form-label">Owner Name </label>
+                            <input type="text" class="form-control" name="name" placeholder="Enter name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="makeModel" class="form-label">Owner Address</label>
+                            <input type="text" class="form-control" name="address" placeholder="Enter owner Address">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="makeModel" class="form-label">Owner Address Temp</label>
+                            <input type="text" class="form-control" name="address_temp" placeholder="Enter owner Address Temp" >
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="makeModel" class="form-label">Insurance Company</label>
+                            <input type="text" class="form-control" name="i_comp" placeholder="Enter insurance_company" >
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="makeModel" class="form-label">Make </label>
+                            <input type="text" class="form-control" name="makeModel" placeholder="Enter make and model">
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="model" class="form-label">Model </label>
+                            <input type="text" class="form-control" name="model" placeholder="Enter model">
+                        </div>
+
+
+                        <br><div class="col-md-6">
+                            <label for="manufactureYear" class="form-label">Year of Manufacture</label>
+                            <input type="text" class="form-control" name="manufactureYear" placeholder="Enter year of manufacture">
+                        </div>
+
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="mileage" class="form-label">Mileage</label>
+                            <input type="text" class="form-control" name="mileage" placeholder="Enter mileage">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="engine" class="form-label">Engine Size/Type</label>
+                            <input type="text" class="form-control" name="engine" placeholder="Enter engine size/type">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="transmission" class="form-label">Transmission Type</label>
+                            <input type="text" class="form-control" name="transmission" placeholder="Enter transmission type">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="fuel" class="form-label">Fuel Type</label>
+                            <input type="text" class="form-control" name="fuel" placeholder="Enter fuel type">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="color" class="form-label">Color</label>
+                            <input type="text" class="form-control" name="color" placeholder="Enter color">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="bodyStyle" class="form-label">Body Style</label>
+                            <input type="text" class="form-control" name="bodyStyle" placeholder="Enter body style">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="features" class="form-label">Features</label>
+                            <textarea class="form-control" name="features" placeholder="Enter features"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="condition" class="form-label">Condition</label>
+                            <textarea class="form-control" name="condition" placeholder="Enter condition"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ownershipHistory" class="form-label">Ownership History</label>
+                            <textarea class="form-control" name="ownershipHistory" placeholder="Enter ownership history"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="text" class="form-control" name="price" placeholder="Enter price">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" name="location" placeholder="Enter location">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">State</label>
+                                    <select class="form-control" name="state_code" id="state_code" required="required">
+
+                                        <option value="">Select State Code</option>
+                                        
+                                        <option value="GJ ">Gujarat</option>
+                                    </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <select class="form-control" name="city_code" id="city_code" required="required">
+                                <option value="">Select State Code</option>
+                                <option value="01">Ahmedabad</option>
+                                <option value="02">Mehsana</option>
+                                <option value="03">Rajkot</option>
+                                <option value="04">Bhavnagar</option>
+                                <option value="05">Surat</option>
+                                <option value="06">Vadodra</option>
+                                <option value="07">Nadiad</option>
+                                <option value="08">Palanpur</option>
+                                <option value="09">Himmatnagar</option>
+                                <option value="10">Jamnagar</option>
+                                <option value="11">Junagadh</option>
+                                <option value="12">Bhuj</option>
+                                <option value="13">Surendranagar</option>
+                                <option value="14">Amreli</option>
+                                <option value="15">Valsad</option>
+                                <option value="16">Bharuch</option>
+                                <option value="17">Godhra</option>
+                                <option value="18">Gandhinagar</option>
+                                <option value="19">Bardoli</option>
+                                <option value="20">Dahod</option>
+                                <option value="21">Navsari</option>
+                                <option value="22">Rajpipla</option>
+                                <option value="23">Anand</option>
+                                <option value="24">Patan</option>
+                                <option value="25">Porbandar</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="registrationInfo" class="form-label">Registration Information</label>
+                            <textarea class="form-control" name="registrationInfo" placeholder="Enter registration information"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="titleStatus" class="form-label">Title Status</label>
+                            <input type="text" class="form-control" name="titleStatus" placeholder="Enter title status">
+                        </div>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'service_provider/lib/chart/chart.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/easing/easing.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/tempusdominus/js/moment.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/tempusdominus/js/moment-timezone.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'service_provider/js/main.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving License</title>
+    <style type="text/css">
+        .driving-license {
+        width: 300px;
+        border: 1px solid #000;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .header h1 {
+        margin: 0;
+    }
+
+    .license-number {
+        margin-top: 10px;
+    }
+
+    .photo img {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-item {
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .label {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .value {
+        flex-grow: 1;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="driving-license">
+        <div class="header">
+            <h1>Driving License</h1>
+            <div class="license-number">
+                <span>License Number:</span>
+                <span>DL123456789</span>
+            </div>
+        </div>
+        <div class="personal-info">
+            <div class="photo">
+                <img src="profile.jpg" alt="Photo">
+            </div>
+            <div class="details">
+                <div class="info-item">
+                    <span class="label">Name:</span>
+                    <span class="value">John Doe</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Date of Birth:</span>
+                    <span class="value">01/01/1990</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Address:</span>
+                    <span class="value">123 Main Street, City, Country</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">License Type:</span>
+                    <span class="value">Car</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

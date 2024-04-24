@@ -1,0 +1,79 @@
+<!-- dl_print_content.html -->
+{% extends 'dl_print.html' %}
+
+{% block content %}
+
+           <div class="driving-license">
+    <div class="header">
+        <h2>Driving License</h2>
+        <img src="{% static 'img/banner_2.jpg' %}" alt="Driving License Logo" height="100px">
+    </div>
+    <div class="details" style="margin-left:80px">
+        <div class="row">
+            <div class="label">DL Number:</div>
+            <div class="value">{{ data.rto_number }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Name:</div>
+            <div class="value">{{ data.name }}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Father Name:</div>
+            <div class="value">{{ data.father_name   }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Mother Name:</div>
+            <div class="value">{{ data.mother_name   }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Date of Birth:</div>
+            <div class="value">{{ data.date}}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Birth Place:</div>
+            <div class="value">{{ data.birth_p  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Email-ID:</div>
+            <div class="value">{{ data.email  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Mobile_Number:</div>
+            <div class="value">{{ data.mobile  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Gender:</div>
+            <div class="value">{{ data.gender     }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Relation:</div>
+            <div class="value">{{ data.relation  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Age:</div>
+            <div class="value">{{ data.age  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Boold Group:</div>
+            <div class="value">{{ data.b_group  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Occupation:</div>
+            <div class="value">{{ data.occupation     }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Main Address:</div>
+            <div class="value">{{ data.address  }}&nbsp;&nbsp;&nbsp;{{ data.city }}&nbsp;&nbsp;&nbsp;{{ data.state  }}&nbsp;&nbsp;&nbsp;{{ data.pincode }} </div>
+        </div>
+        
+        <div class="row">
+    <div class="value" style="margin-top: 50px"><img src="{% static 'service_provider/img/' %}{{ data.photo }}" width="130"></div>
+    <div class="value" style="margin-top: 50px"><img src="{% static 'img/myqr.png' %}" width="150"></div>
+    
+</div>
+
+<button style="margin-left: 200px;"  class="button-1" role="button"><a href="http://127.0.0.1:8000/rto_office/">submit</a></button>
+        <!-- Add more rows for other DL fields as needed -->
+    </div>{% endblock %}

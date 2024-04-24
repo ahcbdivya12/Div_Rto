@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <title>Rto Admin</title>
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'service_provider/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'service_provider/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'service_provider/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'service_provider/css/style.css' %}" rel="stylesheet">
+    <style type="text/css">
+        .table_scrool{
+
+   overflow-y:scroll;  
+   overflow-x:scroll;  
+   display:block;
+
+        }
+         /* Remove default link styles */
+    a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: inherit; /* Maintain text color on hover */
+    }
+    .driving-license {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.details {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.label {
+    flex: 1;
+    font-weight: bold;
+}
+
+.value {
+    flex: 2;
+}
+
+.footer {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* CSS */
+.button-1 {
+  background-color: #009CFF;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+    </style>
+
+</head>
+
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+
+      
+        
+        <div class="content" style="margin-left:120px">
+            
+
+
+        <!-- Content Start -->
+        
+            <!-- Navbar End -->
+
+
+           <div class="driving-license">
+    <div class="header">
+        <h2>Driving License</h2>
+        <img src="{% static 'img/banner_2.jpg' %}" alt="Driving License Logo" height="100px">
+    </div>
+    <div class="details" style="margin-left:80px">
+        <div class="row">
+            <div class="label">DL Number:</div>
+            <div class="value">{{ data.rto_number }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Name:</div>
+            <div class="value">{{ data.name }}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Father Name:</div>
+            <div class="value">{{ data.father_name   }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Mother Name:</div>
+            <div class="value">{{ data.mother_name   }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Date of Birth:</div>
+            <div class="value">{{ data.date}}</div>
+        </div>
+
+        <div class="row">
+            <div class="label">Birth Place:</div>
+            <div class="value">{{ data.birth_p  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Email-ID:</div>
+            <div class="value">{{ data.email  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Mobile_Number:</div>
+            <div class="value">{{ data.mobile  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Gender:</div>
+            <div class="value">{{ data.gender     }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Relation:</div>
+            <div class="value">{{ data.relation  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Age:</div>
+            <div class="value">{{ data.age  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Boold Group:</div>
+            <div class="value">{{ data.b_group  }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Occupation:</div>
+            <div class="value">{{ data.occupation     }}</div>
+        </div>
+        <div class="row">
+            <div class="label">Main Address:</div>
+            <div class="value">{{ data.address  }}&nbsp;&nbsp;&nbsp;{{ data.city }}&nbsp;&nbsp;&nbsp;{{ data.state  }}&nbsp;&nbsp;&nbsp;{{ data.pincode }} </div>
+        </div>
+        
+        <div class="row">
+    <div class="value" style="margin-top: 50px"><img src="{% static 'service_provider/img/' %}{{ data.photo }}" width="130"></div>
+    <div class="value" style="margin-top: 50px"><img src="{% static 'img/myqr.png' %}" width="150"></div>
+    
+</div>    <button  id="printBtn" class="button-1" style="margin-left:200px">Print Driving Licence</button>
+<script type="text/javascript">
+document.getElementById('printBtn').addEventListener('click', function() {
+    window.print();
+});
+</script>
+        <!-- Add more rows for other DL fields as needed -->
+    </div>
+    <div class="footer">
+        <p>This is a virtual representation of your driving license. Do not share this information with others.</p>
+    </div>
+</div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+  <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'service_provider/lib/chart/chart.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/easing/easing.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/tempusdominus/js/moment.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/tempusdominus/js/moment-timezone.min.js'%}"></script>
+    <script src="{% static 'service_provider/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+    <!-- Template Javascript -->
+    <script src="{% static 'service_provider/js/main.js'%}"></script>
+</body>
+
+</html>
